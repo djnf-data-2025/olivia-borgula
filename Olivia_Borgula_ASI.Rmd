@@ -63,9 +63,6 @@ library(tidyverse)
 library(janitor)
 library(readxl)
 library(rvest)
-
-
-#test
 ```
 
 
@@ -84,7 +81,7 @@ This data is UVCT40	Gross operating surplus by industry
 #     clean_names()
 
 
-data <- read_excel("../data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") |> 
+data <- read_excel("data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") |> 
    clean_names() |> 
   rename(industry = x2)
 
