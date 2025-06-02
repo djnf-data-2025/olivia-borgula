@@ -81,7 +81,7 @@ This data is UVCT40	Gross operating surplus by industry
 #     clean_names()
 
 #upload data 
-data <- read_excel("data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") %>% 
+data <- read_excel("../data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") %>% 
    clean_names() %>%
   rename(industry = x2)
 
@@ -89,6 +89,7 @@ data <- read_excel("data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") %>%
 gdp_industry <- data%>%
   select(-"x3", -"line")%>%
   na.omit(gdp_industry) 
+
 ```
 
 # Top 10 industries by gross operating surplus, 2023
@@ -105,7 +106,6 @@ x20_top2023 <- gdp_industry %>%
 
 # Changes in GDP across all industries since 1998
 ```{r}
-
 ```
 
 
