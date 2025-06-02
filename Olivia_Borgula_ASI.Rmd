@@ -66,7 +66,7 @@ library(rvest)
 ```
 
 
-# Load your data
+# Loading the data 
 
 GDP by Industry / COMP, TXPIXS, GOS
 Wages and salaries, supplements to wages and salaries, taxes on production and imports, subsidies, government surplus, consumption of fixed capital, business current transfer payments, and corporate and noncorporate other gross operating surplus by industry
@@ -80,43 +80,47 @@ This data is UVCT40	Gross operating surplus by industry
 # data <- read.csv("../data/2024 Presidential Post General Md Financial Info 2024 Presidential Post General .csv") |> 
 #     clean_names()
 
-
-data <- read_excel("data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") |> 
-   clean_names() |> 
+#upload data 
+data <- read_excel("data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") %>% 
+   clean_names() %>%
   rename(industry = x2)
 
+#remove NA columns and duplicates 
+gdp_industry <- data%>%
+  select(-"x3", -"line")%>%
+  na.omit(gdp_industry) 
 
-
-```
-
-Data details:
-
-
-# Explore the data types
-```{r}
-
-#glimpse(YOUR_DATA)
-
-glimpse(data)
-
+#make separate data frame for the total and aggregates 
+gdp_all <- gdp_industry%>%
+  filter(industry == "All industries")%>%
+  pivot_longer()
 ```
 
 # Top 10 industries by gross operating surplus, 2023
 ```{r}
-
-top2023 <- data |> 
-  select(industry, x2023) |> 
+#find top 10 industries by gross operating surplus for most recent year in data: 2023
+top2023 <- gdp_industry %>%
+  select(industry, x2023) %>%
   slice_max(x2023, n= 10)
 
-top2023
+x20_top2023 <- gdp_industry %>%
+  select(industry, x2023) %>%
+  slice_max(x2023, n= 20)
 ```
 
+# Changes in GDP across all industries since 1998
+```{r}
+gdp_all %>%
+  ggplot() +
+  geom_line(aes(x=year, y=n)) 
+```
 
 
 # Questions 
 
 Write down questions you want answered:
 Perhaps Olivia can look at some of the top markets for promo (Education, Healthcare, Construction, Manufacturing/Distribution & Financial/Insurance are the top 5) and analyze some data from Bureau of Labor Statistics and other sources to find trends in how they’re doing, etc.?
+
 
 
 # Data Details
