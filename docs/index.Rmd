@@ -34,13 +34,25 @@ For visuals, I plan on creating a map in Flourish showing the flow of cotton T-s
 
 <b>Estimated delivery:<b> mid to late June. 
 
-
-```{r include=FALSE}
+### Upload data and load libraries  
+```{r}
 #load in libraries 
 library(tidyverse)
 library(janitor)
 library(readxl)
 library(rvest)
+```
+#### Note: I changed my pitch idea this afternoon so was not able to get as far with the data analysis, but I have uploaded my data for the top countries importing T-shirts in 2025, which is the main source of analysis
+```{r}
+# upload textile and apparel data for top countries importing cotton T-shirts
+# this shows March 2025 and aggregated 2023 and 2024 data
+
+china_x2025 <- read_csv("../data/china_x2025.csv")%>%clean_names()  
+nicaragua_x2025 <- read_csv("../data/x2025_nicaragua.csv")%>%clean_names()
+bangladesh_x2025 <- read_csv("../data/bangladesh_x2025.csv")%>%clean_names()
+honduras_x2025 <- read_csv("../data/honduras_x2025.csv")%>%clean_names()
+india_x2025 <- read_csv("../data/india_x2025.csv")%>%clean_names()
+vietnam_x2025 <- read_csv("../data/vietnam_x2025.csv")%>%clean_names()
 ```
 
 

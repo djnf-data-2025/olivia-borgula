@@ -416,6 +416,99 @@ polyester shirts and textiles, and will do additional research on how
 tariffs will affect the cost of these goods.</p>
 <p><b>Estimated delivery:<b> mid to late June.</p>
 </div>
+<div id="upload-data-and-load-libraries" class="section level3">
+<h3>Upload data and load libraries</h3>
+<pre class="r"><code>#load in libraries 
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.5
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<pre class="r"><code>library(janitor)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;janitor&#39;
+## 
+## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     chisq.test, fisher.test</code></pre>
+<pre class="r"><code>library(readxl)
+library(rvest)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rvest&#39;
+## 
+## The following object is masked from &#39;package:readr&#39;:
+## 
+##     guess_encoding</code></pre>
+<div id="note-i-changed-my-pitch-idea-this-afternoon-so-was-not-able-to-get-as-far-with-the-data-analysis-but-i-have-uploaded-my-data-for-the-top-countries-importing-t-shirts-in-2025-which-is-the-main-source-of-analysis" class="section level4">
+<h4>Note: I changed my pitch idea this afternoon so was not able to get
+as far with the data analysis, but I have uploaded my data for the top
+countries importing T-shirts in 2025, which is the main source of
+analysis</h4>
+<pre class="r"><code># upload textile and apparel data for top countries importing cotton T-shirts
+# this shows March 2025 and aggregated 2023 and 2024 data
+
+china_x2025 &lt;- read_csv(&quot;../data/china_x2025.csv&quot;)%&gt;%clean_names()  </code></pre>
+<pre><code>## Rows: 187 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>nicaragua_x2025 &lt;- read_csv(&quot;../data/x2025_nicaragua.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 142 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>bangladesh_x2025 &lt;- read_csv(&quot;../data/bangladesh_x2025.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 178 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>honduras_x2025 &lt;- read_csv(&quot;../data/honduras_x2025.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 171 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>india_x2025 &lt;- read_csv(&quot;../data/india_x2025.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 187 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>vietnam_x2025 &lt;- read_csv(&quot;../data/vietnam_x2025.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 186 Columns: 13
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (2): Description, Units
+## dbl (11): Category, 2023, 2024, YTD Current Month/2024, YTD Current Month/20...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
 </div>
 
 
