@@ -414,7 +414,7 @@ interactive graphics on the final markdown presentation.</p>
 analysis for secondary imported materials in promotional T-shirts, like
 polyester shirts and textiles, and will do additional research on how
 tariffs will affect the cost of these goods.</p>
-<p><b>Estimated delivery:<b> mid to late June.</p>
+<p><b>Estimated delivery:</b> mid to late June.</p>
 </div>
 <div id="upload-data-and-load-libraries" class="section level3">
 <h3>Upload data and load libraries</h3>
@@ -462,7 +462,7 @@ china_x2025 &lt;- read_csv(&quot;../data/china_x2025.csv&quot;)%&gt;%clean_names
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre class="r"><code>nicaragua_x2025 &lt;- read_csv(&quot;../data/x2025_nicaragua.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre class="r"><code>nicaragua_x2025 &lt;- read_csv(&quot;../data/nicaragua_x2025.csv&quot;)%&gt;%clean_names()</code></pre>
 <pre><code>## Rows: 142 Columns: 13
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -507,6 +507,39 @@ china_x2025 &lt;- read_csv(&quot;../data/china_x2025.csv&quot;)%&gt;%clean_names
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code># import data for monthly imports from top countries between 2020 and 2025
+
+x2020_x2025_imports &lt;- read_csv(&quot;../data/x2020_x2025_imports.csv&quot;)%&gt;%clean_names()</code></pre>
+<pre><code>## Rows: 378 Columns: 9
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr (3): Country, Description, Units
+## dbl (6): Category, Year, Month, Quantity, Value, M2
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code># filter for products of interest (cotton t-shirts) and create new, combined dataset for all countries 
+
+# get all dataset names ending with &quot;_x2025&quot; - the pattern I used to store all files 
+dataset_names &lt;- ls(pattern = &quot;_x2025$&quot;)
+
+# loop through each dataset name and store in a list
+filtered_list &lt;- lapply(dataset_names, function(name) {
+  df &lt;- get(name)  
+  country_name &lt;- str_replace(name, &quot;_x2025$&quot;, &quot;&quot;)  # extract country name
+  df %&gt;%
+    filter(description == &quot;M&amp;B COTTON SHIRTS, NOT KNIT&quot;) %&gt;% # I&#39;m interested in cotton shirts
+    mutate(country = str_to_title(country_name)) %&gt;% # capitalize first letter of each country
+     select(country, everything())  # reorder to have country column first
+})
+
+# combine into one dataframe 
+cotton_all &lt;- bind_rows(filtered_list)
+
+#clean up column titles 
+cotton_all &lt;- cotton_all%&gt;%
+  select(-c(category, units))%&gt;%
+  rename(&quot;x2023_total&quot; = x2023, &quot;x2024_total&quot; = x2024, &quot;jan_to_march_2025&quot; = ytd_current_month_2025, &quot;jan_to_march_2024&quot; = ytd_current_month_2024)</code></pre>
 </div>
 </div>
 </div>

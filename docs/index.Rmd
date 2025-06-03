@@ -32,7 +32,7 @@ For visuals, I plan on creating a map in Flourish showing the flow of cotton T-s
 
 <b>Other information I’ll need:</b> I want to do additional data analysis for secondary imported materials in promotional T-shirts, like polyester shirts and textiles, and will do additional research on how tariffs will affect the cost of these goods. 
 
-<b>Estimated delivery:<b> mid to late June. 
+<b>Estimated delivery:</b> mid to late June. 
 
 ### Upload data and load libraries  
 ```{r}
@@ -48,11 +48,40 @@ library(rvest)
 # this shows March 2025 and aggregated 2023 and 2024 data
 
 china_x2025 <- read_csv("../data/china_x2025.csv")%>%clean_names()  
-nicaragua_x2025 <- read_csv("../data/x2025_nicaragua.csv")%>%clean_names()
+nicaragua_x2025 <- read_csv("../data/nicaragua_x2025.csv")%>%clean_names()
 bangladesh_x2025 <- read_csv("../data/bangladesh_x2025.csv")%>%clean_names()
 honduras_x2025 <- read_csv("../data/honduras_x2025.csv")%>%clean_names()
 india_x2025 <- read_csv("../data/india_x2025.csv")%>%clean_names()
 vietnam_x2025 <- read_csv("../data/vietnam_x2025.csv")%>%clean_names()
+
+# import data for monthly imports from top countries between 2020 and 2025
+
+x2020_x2025_imports <- read_csv("../data/x2020_x2025_imports.csv")%>%clean_names()
 ```
 
+
+```{r}
+# filter for products of interest (cotton t-shirts) and create new, combined dataset for all countries 
+
+# get all dataset names ending with "_x2025" - the pattern I used to store all files 
+dataset_names <- ls(pattern = "_x2025$")
+
+# loop through each dataset name and store in a list
+filtered_list <- lapply(dataset_names, function(name) {
+  df <- get(name)  
+  country_name <- str_replace(name, "_x2025$", "")  # extract country name
+  df %>%
+    filter(description == "M&B COTTON SHIRTS, NOT KNIT") %>% # I'm interested in cotton shirts
+    mutate(country = str_to_title(country_name)) %>% # capitalize first letter of each country
+     select(country, everything())  # reorder to have country column first
+})
+
+# combine into one dataframe 
+cotton_all <- bind_rows(filtered_list)
+
+#clean up column titles 
+cotton_all <- cotton_all%>%
+  select(-c(category, units))%>%
+  rename("x2023_total" = x2023, "x2024_total" = x2024, "jan_to_march_2025" = ytd_current_month_2025, "jan_to_march_2024" = ytd_current_month_2024)
+```
 
