@@ -10,9 +10,9 @@
 
 
 
-<meta name="date" content="2025-04-22" />
+<meta name="date" content="2025-06-07" />
 
-<title>Olivia_Borgula_ASI</title>
+<title>final_story_idea</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -349,147 +349,73 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Olivia_Borgula_ASI</h1>
-<h4 class="date">2025-04-22</h4>
+<h1 class="title toc-ignore">final_story_idea</h1>
+<h4 class="date">June 7, 2025</h4>
 
 </div>
 
 
-<p>A demo notebook for Dow Jones News Fund data interns</p>
-<p>During the week’s training, you will work on a project called
-Investigate Your Community to produce detailed story pitches relevant to
-their summer internship positions. The goal is to have the students
-research a topic relevant to your newsroom so they can get to work
-immediately at the internship.</p>
-<p>Here are some examples from last year’s DJNF data journalism
-training:</p>
-<p>Hannah Rosenberger, at ASI Media/Counselor magazine, produced this
-analysis on name, image and likeness trends: <a href="https://hrosenberger.github.io/ASI-NIL-Project/" class="uri">https://hrosenberger.github.io/ASI-NIL-Project/</a></p>
-<p>Shifra Dayak, an intern at the Connecticut Mirror, produced this
-analysis of environment spill data: <a href="https://shifradayak.github.io/DJNF_Merrill/ct_env_spills.html" class="uri">https://shifradayak.github.io/DJNF_Merrill/ct_env_spills.html</a>.</p>
-<p>Michael Zhang, an intern at the Houston Landing, explored local
-election data: <a href="https://michaelzhangreporter.github.io/Houston_Campaign_Finance/" class="uri">https://michaelzhangreporter.github.io/Houston_Campaign_Finance/</a></p>
-<p>Here’s what your newsroom suggested for a project Rob,</p>
-<p>Good morning! I wanted to get back to you about data for our summer
-intern to work on before I forgot. I chatted with Hannah Rosenberger
-(former intern, current superstar data analytics editor at ASI) to get
-her take since she went through the training program last year, and
-here’s an idea we thought would work:</p>
-<p>How are cuts by the Trump administration affecting top markets in
-promo? Education is the biggest market that buys swag/merch, but the
-chart at the bottom of this story has a list of other markets: <a href="https://members.asicentral.com/news/strategy/july-2024/state-of-the-industry-combatting-anti-swag-sentiment/" class="uri">https://members.asicentral.com/news/strategy/july-2024/state-of-the-industry-combatting-anti-swag-sentiment/</a></p>
-<p>One of my colleagues did a preliminary story in March about how Trump
-cuts were affecting education spending (though it’s more anecdotal): <a href="https://members.asicentral.com/news/industry-news/march-2025/education-market-sales-resilient-despite-federal-funding-uncertainties/" class="uri">https://members.asicentral.com/news/industry-news/march-2025/education-market-sales-resilient-despite-federal-funding-uncertainties/</a></p>
-<p>Hannah did a feature story that ran in February about the
-“white-collar recession” and what it means for the promo industry, with
-some great Flourish charts based on data from Indeed and the Bureau of
-Labor Statistics: <a href="https://members.asicentral.com/news/strategy/february-2025/what-does-the-white-collar-recession-mean-for-promo/" class="uri">https://members.asicentral.com/news/strategy/february-2025/what-does-the-white-collar-recession-mean-for-promo/</a></p>
-<p>Perhaps Olivia can look at some of the top markets for promo
-(Education, Healthcare, Construction, Manufacturing/Distribution &amp;
-Financial/Insurance are the top 5) and analyze some data from Bureau of
-Labor Statistics and other sources to find trends in how they’re doing,
-etc.?</p>
-<p>Let me know if that works for you, or if you need us to supply
-anything further. Thanks!</p>
-<p>Best regards,</p>
-<p>Theresa Hegel, MASI Executive Editor, Special Projects &amp;
-Sustainability Editor, Promo for the Planet Advertising Specialty
-Institute® | Every Step of the Way™</p>
-<p>Email: <a href="mailto:thegel@asicentral.com" class="email">thegel@asicentral.com</a> Phone: (610) 462-2238 Fax: (215)
-953-3107 Web: members.asicentral.com/news LinkedIn:
-www.linkedin.com/in/theresahegel/ Instagram: <span class="citation">@theresa_hegel_asi</span></p>
-<p>This notebook helps you get started</p>
-<div id="load-software-libraries" class="section level1">
-<h1>Load software libraries</h1>
-<pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
-#install.packages(&quot;janitor&quot;)
-#install.packages(&quot;readxl&quot;)
-#install.packages(&quot;rvest&quot;)
-library(tidyverse)</code></pre>
-<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-## ✔ dplyr     1.1.4     ✔ readr     2.1.5
-## ✔ forcats   1.0.0     ✔ stringr   1.5.1
-## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
-## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-## ✔ purrr     1.0.2     
-## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## ✖ dplyr::filter() masks stats::filter()
-## ✖ dplyr::lag()    masks stats::lag()
-## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<pre class="r"><code>library(janitor)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;janitor&#39;
-## 
-## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     chisq.test, fisher.test</code></pre>
-<pre class="r"><code>library(readxl)
-library(rvest)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;rvest&#39;
-## 
-## The following object is masked from &#39;package:readr&#39;:
-## 
-##     guess_encoding</code></pre>
+<div id="the-trump-administrations-trade-war-and-the-promotional-products-industry" class="section level2">
+<h2>The Trump administration’s trade war and the promotional products
+industry</h2>
+<div id="story-pitch-memo" class="section level3">
+<h3>Story pitch memo</h3>
+<p>Olivia Borgula <a href="mailto:oborgula@terpmail.umd.edu" class="email">oborgula@terpmail.umd.edu</a> | 616-970-3620 June 2,
+2025</p>
+<p><b>How Trump’s trade war will affect the promotional products
+industry</b></p>
+<p><b>Why this story:</b> T-shirts are consistently a top promotional
+product. U.S. President Donald Trump has levied heavy tariffs since
+taking office in January on countries including China — which is a top
+exporter of cotton T-shirts to the U.S. — resulting in steeper prices
+and a blow to the promotional product industry.</p>
+<p>The Trump administration’s trade war is relevant in the current
+political climate and has a direct tie to ASI’s coverage because it
+targets items and generally has led to cost increases. While tariffs
+have wide-reaching effects on the promotional product industry, this
+story may encourage manufacturers to be more creative outside of
+T-shirts for their promotional products or seek domestic sellers.</p>
+<p><b>Audience:</b> This story’s audience would be stakeholders in the
+promotional products industry, especially those who sell T-shirts or are
+interested in staying up-to-date about tariff developments. I can
+interview industry experts, T-shirt manufacturers and economic experts
+with expertise on how tariffs work.</p>
+<p>ASI has covered tariffs extensively, but the bulk of coverage is
+breaking news stories or research about stakeholder opinions on tariffs
+and their general implication for the industry. There has not been a
+fleshed out, data-driven story like the one I’m proposing and there has
+not been in-depth coverage on how a specific promotional product will be
+affected, like T-shirts.</p>
+<p><b>Data, visuals and graphics:</b> I will analyze data from the
+International Trade Association — which tracks U.S. textile and apparel
+imports by country — to determine top countries that import materials of
+interest based on what I’ve researched about promotional T-shirts:
+cotton T-shirts and polyester filament fabrics. I’m interested in data
+quantifying the number of shirts imported from other countries, rather
+than imports on the raw materials, because promotional T-shirts tend to
+be shipped from other countries rather than made domestically.</p>
+<p>I’ll also find how much money the U.S. spent on these imports from
+the top countries and how much cotton and polyester T-shirt imports have
+changed over time by using another data tool from the International
+Trade Association.</p>
+<p>For data on T-shirts as a promotional product, I’ll use ASI’s market
+research to explore what the total promotional T-shirt sales were in
+2024 — the most recent data — and whether that’s changed over the last
+five to 10 years by examining past state of the industries.</p>
+<p>For visuals, I plan on creating a map in Flourish showing the flow of
+cotton T-shirt imports from top countries outside the U.S. with the
+weight of the line representing the total monetary value of the
+transaction. I also want to create additional Flourish graphics like bar
+charts, line charts and potentially an alluvial diagram to compare
+imports across countries and over time. I prefer Flourish over ggplot or
+Datawrapper because it’s the site I’m most familiar with and I want
+interactive graphics on the final markdown presentation.</p>
+<p><b>Other information I’ll need:</b> I want to do additional data
+analysis for secondary imported materials in promotional T-shirts, like
+polyester shirts and textiles, and will do additional research on how
+tariffs will affect the cost of these goods.</p>
+<p><b>Estimated delivery:<b> mid to late June.</p>
 </div>
-<div id="loading-the-data" class="section level1">
-<h1>Loading the data</h1>
-<p>GDP by Industry / COMP, TXPIXS, GOS Wages and salaries, supplements
-to wages and salaries, taxes on production and imports, subsidies,
-government surplus, consumption of fixed capital, business current
-transfer payments, and corporate and noncorporate other gross operating
-surplus by industry</p>
-<p>Current-dollar levels, 1998-2023: 65 Industries</p>
-<p>This data is UVCT40 Gross operating surplus by industry</p>
-<pre class="r"><code># data &lt;- read.csv(&quot;../data/2024 Presidential Post General Md Financial Info 2024 Presidential Post General .csv&quot;) |&gt; 
-#     clean_names()
-
-#upload data 
-data &lt;- read_excel(&quot;../data/ComponentsOfVA.xlsx&quot;, skip=7, sheet=&quot;UVCT40-A&quot;) %&gt;% 
-   clean_names() %&gt;%
-  rename(industry = x2)</code></pre>
-<pre><code>## New names:
-## • `` -&gt; `...2`
-## • `` -&gt; `...3`</code></pre>
-<pre class="r"><code>#remove NA columns and duplicates 
-gdp_industry &lt;- data%&gt;%
-  select(-&quot;x3&quot;, -&quot;line&quot;)%&gt;%
-  na.omit(gdp_industry) </code></pre>
-</div>
-<div id="top-10-industries-by-gross-operating-surplus-2023" class="section level1">
-<h1>Top 10 industries by gross operating surplus, 2023</h1>
-<pre class="r"><code>#find top 10 industries by gross operating surplus for most recent year in data: 2023
-top2023 &lt;- gdp_industry %&gt;%
-  select(industry, x2023) %&gt;%
-  slice_max(x2023, n= 10)
-
-x20_top2023 &lt;- gdp_industry %&gt;%
-  select(industry, x2023) %&gt;%
-  slice_max(x2023, n= 20)</code></pre>
-</div>
-<div id="changes-in-gdp-across-all-industries-since-1998" class="section level1">
-<h1>Changes in GDP across all industries since 1998</h1>
-</div>
-<div id="questions" class="section level1">
-<h1>Questions</h1>
-<p>Write down questions you want answered: Perhaps Olivia can look at
-some of the top markets for promo (Education, Healthcare, Construction,
-Manufacturing/Distribution &amp; Financial/Insurance are the top 5) and
-analyze some data from Bureau of Labor Statistics and other sources to
-find trends in how they’re doing, etc.?</p>
-</div>
-<div id="data-details" class="section level1">
-<h1>Data Details</h1>
-<p>You’re looking at GDP by industry from the Bureau of Economic
-Analysis, the underlying estimates <a href="https://www.bea.gov/industry/industry-underlying-estimates" class="uri">https://www.bea.gov/industry/industry-underlying-estimates</a></p>
-<p>GDP by Industry / COMP, TXPIXS, GOS Wages and salaries, supplements
-to wages and salaries, taxes on production and imports, subsidies,
-government surplus, consumption of fixed capital, business current
-transfer payments, and corporate and noncorporate other gross operating
-surplus by industry</p>
-<p>Current-dollar levels, 1998-2023: 65 Industries Zipped | XLSX,
-Interactive Data</p>
-<p>For general context, read this report <a href="https://www.bea.gov/sites/default/files/2025-03/gdp4q24-3rd.pdf" class="uri">https://www.bea.gov/sites/default/files/2025-03/gdp4q24-3rd.pdf</a></p>
 </div>
 
 

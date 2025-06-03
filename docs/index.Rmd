@@ -1,132 +1,46 @@
 ---
-title: "Olivia_Borgula_ASI"
+title: final_story_idea
 output: html_document
-date: "2025-04-22"
+date: "June 7, 2025"
 ---
 
-A demo notebook for Dow Jones News Fund data interns
+## The Trump administration's trade war and the promotional products industry 
 
-During the week’s training, you will work on a project called Investigate Your Community to produce detailed story pitches relevant to their summer internship positions. The goal is to have the students research a topic relevant to your newsroom so they can get to work immediately at the internship. 
+### Story pitch memo
 
-Here are some examples from last year’s DJNF data journalism training:
+Olivia Borgula
+oborgula@terpmail.umd.edu | 616-970-3620
+June 2, 2025
 
-Hannah Rosenberger, at ASI Media/Counselor magazine, produced this analysis on name, image and likeness trends: https://hrosenberger.github.io/ASI-NIL-Project/
+<b>How Trump’s trade war will affect the promotional products industry</b>
 
-Shifra Dayak, an intern at the Connecticut Mirror, produced this analysis of environment spill data: https://shifradayak.github.io/DJNF_Merrill/ct_env_spills.html.
+<b>Why this story:</b> T-shirts are consistently a top promotional product. U.S. President Donald Trump has levied heavy tariffs since taking office in January on countries including China — which is a top exporter of cotton T-shirts to the U.S. — resulting in steeper prices and a blow to the promotional product industry.  
 
-Michael Zhang, an intern at the Houston Landing, explored local election data: https://michaelzhangreporter.github.io/Houston_Campaign_Finance/
+The Trump administration’s trade war is relevant in the current political climate and has a direct tie to ASI’s coverage because it targets items and generally has led to cost increases. While tariffs have wide-reaching effects on the promotional product industry, this story may encourage manufacturers to be more creative outside of T-shirts for their promotional products or seek domestic sellers. 
 
+<b>Audience:</b> This story’s audience would be stakeholders in the promotional products industry, especially those who sell T-shirts or are interested in staying up-to-date about tariff developments. I can interview industry experts, T-shirt manufacturers and economic experts with expertise on how tariffs work.
 
-Here's what your newsroom suggested for a project
-Rob,
- 
-Good morning! I wanted to get back to you about data for our summer intern to work on before I forgot. I chatted with Hannah Rosenberger (former intern, current superstar data analytics editor at ASI) to get her take since she went through the training program last year, and here’s an idea we thought would work:
- 
-How are cuts by the Trump administration affecting top markets in promo? Education is the biggest market that buys swag/merch, but the chart at the bottom of this story has a list of other markets: https://members.asicentral.com/news/strategy/july-2024/state-of-the-industry-combatting-anti-swag-sentiment/
- 
-One of my colleagues did a preliminary story in March about how Trump cuts were affecting education spending (though it’s more anecdotal): https://members.asicentral.com/news/industry-news/march-2025/education-market-sales-resilient-despite-federal-funding-uncertainties/
- 
-Hannah did a feature story that ran in February about the “white-collar recession” and what it means for the promo industry, with some great Flourish charts based on data from Indeed and the Bureau of Labor Statistics:  https://members.asicentral.com/news/strategy/february-2025/what-does-the-white-collar-recession-mean-for-promo/
- 
-Perhaps Olivia can look at some of the top markets for promo (Education, Healthcare, Construction, Manufacturing/Distribution & Financial/Insurance are the top 5) and analyze some data from Bureau of Labor Statistics and other sources to find trends in how they’re doing, etc.?
- 
-Let me know if that works for you, or if you need us to supply anything further. Thanks!
- 
- 
-Best regards,
- 
-Theresa Hegel, MASI
-Executive Editor, Special Projects & Sustainability
-Editor, Promo for the Planet
-Advertising Specialty Institute® | Every Step of the Way™
- 
-Email: thegel@asicentral.com
-Phone: (610) 462-2238
-Fax: (215) 953-3107
-Web: members.asicentral.com/news
-LinkedIn: www.linkedin.com/in/theresahegel/
-Instagram: @theresa_hegel_asi
+ASI has covered tariffs extensively, but the bulk of coverage is breaking news stories or research about stakeholder opinions on tariffs and their general implication for the industry. There has not been a fleshed out, data-driven story like the one I’m proposing and there has not been in-depth coverage on how a specific promotional product will be affected, like T-shirts.  
+
+<b>Data, visuals and graphics:</b> I will analyze data from the International Trade Association — which tracks U.S. textile and apparel imports by country — to determine top countries that import materials of interest based on what I’ve researched about promotional T-shirts: cotton T-shirts and polyester filament fabrics. I’m interested in data quantifying the number of shirts imported from other countries, rather than imports on the raw materials, because promotional T-shirts tend to be shipped from other countries rather than made domestically. 
+
+I’ll also find how much money the U.S. spent on these imports from the top countries and how much cotton and polyester T-shirt imports have changed over time by using another data tool from the International Trade Association. 
+
+For data on T-shirts as a promotional product, I’ll use ASI’s market research to explore what the total promotional T-shirt sales were in 2024 — the most recent data — and whether that’s changed over the last five to 10 years by examining past state of the industries. 
+
+For visuals, I plan on creating a map in Flourish showing the flow of cotton T-shirt imports from top countries outside the U.S. with the weight of the line representing the total monetary value of the transaction. I also want to create additional Flourish graphics like bar charts, line charts and potentially an alluvial diagram to compare imports across countries and over time. I prefer Flourish over ggplot or Datawrapper because it’s the site I’m most familiar with and I want interactive graphics on the final markdown presentation. 
+
+<b>Other information I’ll need:</b> I want to do additional data analysis for secondary imported materials in promotional T-shirts, like polyester shirts and textiles, and will do additional research on how tariffs will affect the cost of these goods. 
+
+<b>Estimated delivery:<b> mid to late June. 
 
 
-
-
-
-This notebook helps you get started
-
-# Load software libraries
-```{r}
-#install.packages("tidyverse")
-#install.packages("janitor")
-#install.packages("readxl")
-#install.packages("rvest")
+```{r include=FALSE}
+#load in libraries 
 library(tidyverse)
 library(janitor)
 library(readxl)
 library(rvest)
 ```
 
-
-# Loading the data 
-
-GDP by Industry / COMP, TXPIXS, GOS
-Wages and salaries, supplements to wages and salaries, taxes on production and imports, subsidies, government surplus, consumption of fixed capital, business current transfer payments, and corporate and noncorporate other gross operating surplus by industry
-
-Current-dollar levels, 1998-2023: 65 Industries
-
-This data is UVCT40	Gross operating surplus by industry
-
-```{r}
-
-# data <- read.csv("../data/2024 Presidential Post General Md Financial Info 2024 Presidential Post General .csv") |> 
-#     clean_names()
-
-#upload data 
-data <- read_excel("../data/ComponentsOfVA.xlsx", skip=7, sheet="UVCT40-A") %>% 
-   clean_names() %>%
-  rename(industry = x2)
-
-#remove NA columns and duplicates 
-gdp_industry <- data%>%
-  select(-"x3", -"line")%>%
-  na.omit(gdp_industry) 
-
-```
-
-# Top 10 industries by gross operating surplus, 2023
-```{r}
-#find top 10 industries by gross operating surplus for most recent year in data: 2023
-top2023 <- gdp_industry %>%
-  select(industry, x2023) %>%
-  slice_max(x2023, n= 10)
-
-x20_top2023 <- gdp_industry %>%
-  select(industry, x2023) %>%
-  slice_max(x2023, n= 20)
-```
-
-# Changes in GDP across all industries since 1998
-```{r}
-```
-
-
-# Questions 
-
-Write down questions you want answered:
-Perhaps Olivia can look at some of the top markets for promo (Education, Healthcare, Construction, Manufacturing/Distribution & Financial/Insurance are the top 5) and analyze some data from Bureau of Labor Statistics and other sources to find trends in how they’re doing, etc.?
-
-
-
-# Data Details
-
-You're looking at GDP by industry from the Bureau of Economic Analysis, the underlying estimates
-https://www.bea.gov/industry/industry-underlying-estimates
-
-GDP by Industry / COMP, TXPIXS, GOS
-Wages and salaries, supplements to wages and salaries, taxes on production and imports, subsidies, government surplus, consumption of fixed capital, business current transfer payments, and corporate and noncorporate other gross operating surplus by industry
-
-Current-dollar levels, 1998-2023: 65 Industries Zipped | XLSX, Interactive Data
-
-
-For general context, read this report
-https://www.bea.gov/sites/default/files/2025-03/gdp4q24-3rd.pdf
 
