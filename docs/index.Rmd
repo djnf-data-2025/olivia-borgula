@@ -35,7 +35,7 @@ For visuals, I plan on creating a map in Flourish showing the flow of cotton T-s
 <b>Estimated delivery:</b> mid to late June. 
 
 ### Upload data and load libraries  
-```{r}
+```{r message = FALSE, warning = FALSE}
 #load in libraries 
 library(tidyverse)
 library(lubridate)
@@ -46,7 +46,7 @@ library(rvest)
 library(janitor)
 ```
 #### Note: I changed my pitch idea this afternoon so was not able to get as far with the data analysis, but I have uploaded my data for the top countries importing T-shirts in 2025, which is the main source of analysis
-```{r}
+```{r, output=FALSE}
 # upload textile and apparel data for top countries importing cotton T-shirts
 # this shows March 2025 and aggregated 2023 and 2024 data
 
@@ -88,7 +88,7 @@ cotton_all <- cotton_all%>%
   rename("x2023_total" = x2023, "x2024_total" = x2024, "jan_to_march_2025" = ytd_current_month_2025, "jan_to_march_2024" = ytd_current_month_2024)
 ```
 
-### 2020 to 2025 data
+### 2020 to 2025 data - Quantity 
 
 ```{r}
 ### 
@@ -96,7 +96,6 @@ cotton_all <- cotton_all%>%
 # 2020 to 2025
 
 ### 
-
 
 total_x2020_x2025 <- x2020_x2025_imports%>%
   group_by(country, year)%>%
@@ -107,62 +106,81 @@ total_x2020_x2025 <- x2020_x2025_imports%>%
     names_prefix = "year_"
   )
 
-total_long <- total_x2020_x2025 %>%
+
+### 
+
+# 2024 and 2025
+
+###
+
+x2024_x2025 <- x2020_x2025_imports %>%
+  mutate(
+    year = as.integer(year),
+    month = as.integer(month)
+  ) %>%
+  filter(year %in% c(2024, 2025)) %>%
+  mutate(
+    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
+  ) %>%
+  group_by(country, year_month) %>%
+  summarize(monthly_total = sum(quantity, na.rm = TRUE), .groups = "drop")
+
+write_csv(x2024_x2025, "quantity_monthly.csv")
+```
+
+<pre><code class="r">
+```{r, results='asis', echo=FALSE}
+cat('<div class="flourish-embed flourish-chart" data-src="visualisation/23591396"> <script src="https://public.flourish.studio/resources/embed.js"></script>
+<noscript><img src="https://public.flourish.studio/visualisation/23591396/thumbnail" width="75%" alt="chart visualization" /></noscript>
+
+</div>') 
+```
+
+
+### 2020 to 2025 data - Monetary 
+
+```{r}
+value_x2020_x2025 <- x2020_x2025_imports%>%
+  group_by(country, year)%>%
+  summarize(yearly_total = sum(value, na.rm=TRUE))%>%
+  pivot_wider(
+    names_from = year,
+    values_from = yearly_total,
+    names_prefix = "year_"
+  )
+
+value_long <- value_x2020_x2025 %>%
   pivot_longer(
     cols = starts_with("year_"),
     names_to = "year",
     names_prefix = "year_",
-    values_to = "quantity"
+    values_to = "value"
   ) %>%
   mutate(year = as.integer(year))
 
-# Plot the line chart
-ggplot(total_long, aes(x = year, y = quantity, color = country)) +
-  geom_line(size = 1) +
-  geom_point() +
-  labs(
-    title = "Total Quantity Imported by Year and Country",
-    x = "Year",
-    y = "Total Quantity"
-  ) +
-  theme_minimal()
+value_monthly <- x2020_x2025_imports %>%
+  mutate(
+    year = as.integer(year),
+    month = as.integer(month),
+    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
+  ) %>%
+  group_by(country, year_month) %>%
+  summarize(monthly_total = sum(value, na.rm = TRUE), .groups = "drop")
 
+write_csv(value_monthly, "value_monthly.csv")
 
-### 
-
-# 2025
-
-###
-
-monthly_2025 <- x2020_x2025_imports %>%
-  filter(year == 2025) %>%
-  group_by(country, month) %>%
-  summarize(total_quantity = sum(quantity, na.rm = TRUE), .groups = "drop")
-
-ggplot(monthly_2025, aes(x = month, y = total_quantity, color = country)) +
-  geom_line(size = 1) +
-  geom_point() +
-  scale_x_continuous(breaks = 1:12, labels = month.abb) +
-  labs(
-    title = "Monthly Import Trend in 2025 by Country",
-    x = "Month",
-    y = "Total Quantity"
-  ) +
-  theme_minimal()
 ```
 
-Some findings: 
-- Cotton T-shirt imports from China increased between 2023 and 2024, but have decreased every month of 2025
-- Cotton T-shirt imports from Honduras have increased in 2025 
 
 ### T-shirts as a promotional product data 
 
 ```{r}
 # get data based on ASI's past reports 
-gemini_chat <- chat_google_gemini(model="gemini-2.5-flash-preview-04-17")
+#gemini_chat <- chat_google_gemini(model="gemini-2.5-flash-preview-04-17")
 
-asi_report <- google_upload("../data/x2024_asi_report.png")
+#asi_report <- google_upload("../data/x2024_asi_report.png")
 
-asi_csv <- gemini_chat$chat("Create a CSV where one row is one product in the pie chart, and columns are the values corresponding to each product", asi_report)
+#asi_csv <- gemini_chat$chat("Create a CSV where one row is one product in the pie chart, and columns are the values corresponding to each product", asi_report)
 ```
+
 
