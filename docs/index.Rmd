@@ -73,3 +73,33 @@ Here's where cotton T-shirts come from.
 ## II: Top Cotton T-shirt Exporters to the US
 
 <iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
+```{r message = FALSE, warning = FALSE}
+value_x2020_x2025 <- all_countries%>%
+  group_by(country, year)%>%
+  summarize(yearly_total = sum(value, na.rm=TRUE))%>%
+  pivot_wider(
+    names_from = year,
+    values_from = yearly_total,
+    names_prefix = "year_"
+  )
+
+value_long <- value_x2020_x2025 %>%
+  pivot_longer(
+    cols = starts_with("year_"),
+    names_to = "year",
+    names_prefix = "year_",
+    values_to = "value"
+  ) %>%
+  mutate(year = as.integer(year))
+
+value_monthly <- all_countries %>%
+  mutate(
+    year = as.integer(year),
+    month = as.integer(month),
+    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
+  ) %>%
+  group_by(country, year_month) %>%
+  summarize(monthly_total = sum(value, na.rm = TRUE), .groups = "drop")
+```
+

@@ -511,6 +511,32 @@ tend </a>to be made of cotton, followed by polyester.</p>
 </svg>
 </a>
 </div>
+<pre class="r"><code>value_x2020_x2025 &lt;- all_countries%&gt;%
+  group_by(country, year)%&gt;%
+  summarize(yearly_total = sum(value, na.rm=TRUE))%&gt;%
+  pivot_wider(
+    names_from = year,
+    values_from = yearly_total,
+    names_prefix = &quot;year_&quot;
+  )
+
+value_long &lt;- value_x2020_x2025 %&gt;%
+  pivot_longer(
+    cols = starts_with(&quot;year_&quot;),
+    names_to = &quot;year&quot;,
+    names_prefix = &quot;year_&quot;,
+    values_to = &quot;value&quot;
+  ) %&gt;%
+  mutate(year = as.integer(year))
+
+value_monthly &lt;- all_countries %&gt;%
+  mutate(
+    year = as.integer(year),
+    month = as.integer(month),
+    year_month = as.Date(sprintf(&quot;%04d-%02d-01&quot;, year, month))  # e.g., &quot;2025-01-01&quot;
+  ) %&gt;%
+  group_by(country, year_month) %&gt;%
+  summarize(monthly_total = sum(value, na.rm = TRUE), .groups = &quot;drop&quot;)</code></pre>
 </div>
 
 
