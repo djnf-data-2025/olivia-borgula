@@ -13,6 +13,8 @@ oborgula@terpmail.umd.edu | 616-970-3620
 
 <iframe src='https://flo.uri.sh/visualisation/23601140/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23601140/?utm_source=embed&utm_campaign=visualisation/23601140' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
+Note: I can't tell if this map is just taking a long time to load or if it's just note embedding correcctly. It it doesn't work, click <a href= "https://public.flourish.studio/visualisation/23601140/?utm_source=embed&utm_campaign=visualisation/23601140"> here</a> to view visualization. It only works for me on Safari. 
+
 This map represents the 10 countries that imported the most cotton T-shirts to the US in March 2025. 
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
@@ -86,14 +88,14 @@ Here's where cotton T-shirts come from.
 
 ## II: Top Cotton T-shirt Exporters to the US
 
-<b>How do some of the top exporters compare over time? <b><br>
+<b>How do some of the top exporters compare over time? </b><br>
 This figure shows the top six exporters in terms of aggregated cotton T-shirt importers to the US between January 2024 and March 2025, which is why it looks different than just looking at March 2025 data. 
 
 It shows that China's imports have trended down in 2025, Bangladesh's have steadily risen and Honduras and Nicaragua have spiked in 2025. 
 
 <iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
-<b>Currently, what are the top countries exporting cotton T-shirts to the US? </b><br>
+<b>Currently, what are the top countries exporting cotton T-shirts to the US? </b> <br>
 In March 2025, the most recent data available, the top countries exporting cotton T-shirts to the US in terms of total quantity were Bangladesh, India and Vietnam. 
 ```{r message = FALSE, warning = FALSE}
 # find the top 10 countries exporting cotton T-shirts to the US in March 2025 - the most current data 
@@ -113,7 +115,8 @@ datatable(value_march_x2025, options = list(pageLength = 10))
 
 ```
 
-<b>What are the top exporters of cotton T-shirts to the US between 2020 and 2025?</b><br>
+<b>What are the top exporters of cotton T-shirts to the US between 2020 and 2025?</b>
+<br>
 Explore the datatable and sort each year column to see top countries by total quantity shipped to the US for that year. 2025 data is not complete because it's only available until March 2025. 
 
 Based on this, Bangladesh, India, Vietnam and China have consistently been the top five exporters to the US, which some variation each year. 
