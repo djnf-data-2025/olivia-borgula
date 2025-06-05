@@ -1,18 +1,15 @@
 ---
-title: final_story_idea
-output: html_document
+title: The Trump administration's trade war and the promotional products industry
+output: 
+  html_document:
+    theme: readable
 date: "June 7, 2025"
+
 ---
-
-## The Trump administration's trade war and the promotional products industry 
-
-### Story pitch memo
+## How recent tarrifs affect a top promotional product: T-shirts
 
 Olivia Borgula
 oborgula@terpmail.umd.edu | 616-970-3620
-June 2, 2025
-
-<b>How Trump’s trade war will affect the promotional products industry</b>
 
 <b>Why this story:</b> T-shirts are consistently a top promotional product. U.S. President Donald Trump has levied heavy tariffs since taking office in January on countries including China — which is a top exporter of cotton T-shirts to the U.S. — resulting in steeper prices and a blow to the promotional product industry.  
 
@@ -45,130 +42,10 @@ library(jsonlite)
 library(rvest)
 library(janitor)
 ```
-#### Note: I changed my pitch idea this afternoon so was not able to get as far with the data analysis, but I have uploaded my data for the top countries importing T-shirts in 2025, which is the main source of analysis
-```{r, output=FALSE}
-# upload textile and apparel data for top countries importing cotton T-shirts
-# this shows March 2025 and aggregated 2023 and 2024 data
 
-china_x2025 <- read_csv("../data/country_data/china_x2025.csv")%>%clean_names()  
-nicaragua_x2025 <- read_csv("../data/country_data/nicaragua_x2025.csv")%>%clean_names()
-bangladesh_x2025 <- read_csv("../data/country_data/bangladesh_x2025.csv")%>%clean_names()
-honduras_x2025 <- read_csv("../data/country_data/honduras_x2025.csv")%>%clean_names()
-india_x2025 <- read_csv("../data/country_data/india_x2025.csv")%>%clean_names()
-vietnam_x2025 <- read_csv("../data/country_data/vietnam_x2025.csv")%>%clean_names()
-
-# import data for monthly imports from top countries between 2020 and 2025
-
-x2020_x2025_imports <- read_csv("../data/x2020_x2025_imports.csv")%>%clean_names()
-```
-
-### March 2025 data 
-```{r}
-# filter for products of interest (cotton t-shirts) and create new, combined dataset for all countries 
-
-# get all dataset names ending with "_x2025" - the pattern I used to store all files 
-dataset_names <- ls(pattern = "_x2025$")
-
-# loop through each dataset name and store in a list
-filtered_list <- lapply(dataset_names, function(name) {
-  df <- get(name)  
-  country_name <- str_replace(name, "_x2025$", "")  # extract country name
-  df %>%
-    filter(description == "M&B COTTON SHIRTS, NOT KNIT") %>% # I'm interested in cotton shirts
-    mutate(country = str_to_title(country_name)) %>% # capitalize first letter of each country
-     select(country, everything())  # reorder to have country column first
-})
-
-# combine into one dataframe 
-cotton_all <- bind_rows(filtered_list)
-
-#clean up column titles 
-cotton_all <- cotton_all%>%
-  select(-c(category, units))%>%
-  rename("x2023_total" = x2023, "x2024_total" = x2024, "jan_to_march_2025" = ytd_current_month_2025, "jan_to_march_2024" = ytd_current_month_2024)
-```
-
-### 2020 to 2025 data - Quantity 
-
-```{r}
-### 
-
-# 2020 to 2025
-
-### 
-
-total_x2020_x2025 <- x2020_x2025_imports%>%
-  group_by(country, year)%>%
-  summarize(yearly_total = sum(quantity, na.rm=TRUE))%>%
-  pivot_wider(
-    names_from = year,
-    values_from = yearly_total,
-    names_prefix = "year_"
-  )
-
-
-### 
-
-# 2024 and 2025
-
-###
-
-x2024_x2025 <- x2020_x2025_imports %>%
-  mutate(
-    year = as.integer(year),
-    month = as.integer(month)
-  ) %>%
-  filter(year %in% c(2024, 2025)) %>%
-  mutate(
-    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
-  ) %>%
-  group_by(country, year_month) %>%
-  summarize(monthly_total = sum(quantity, na.rm = TRUE), .groups = "drop")
-
-write_csv(x2024_x2025, "quantity_monthly.csv")
-```
-
-<pre><code class="r">
-```{r, results='asis', echo=FALSE}
-cat('<div class="flourish-embed flourish-chart" data-src="visualisation/23591396"> <script src="https://public.flourish.studio/resources/embed.js"></script>
-<noscript><img src="https://public.flourish.studio/visualisation/23591396/thumbnail" width="75%" alt="chart visualization" /></noscript>
-
-</div>') 
-```
-
-
-### 2020 to 2025 data - Monetary 
-
-```{r}
-value_x2020_x2025 <- x2020_x2025_imports%>%
-  group_by(country, year)%>%
-  summarize(yearly_total = sum(value, na.rm=TRUE))%>%
-  pivot_wider(
-    names_from = year,
-    values_from = yearly_total,
-    names_prefix = "year_"
-  )
-
-value_long <- value_x2020_x2025 %>%
-  pivot_longer(
-    cols = starts_with("year_"),
-    names_to = "year",
-    names_prefix = "year_",
-    values_to = "value"
-  ) %>%
-  mutate(year = as.integer(year))
-
-value_monthly <- x2020_x2025_imports %>%
-  mutate(
-    year = as.integer(year),
-    month = as.integer(month),
-    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
-  ) %>%
-  group_by(country, year_month) %>%
-  summarize(monthly_total = sum(value, na.rm = TRUE), .groups = "drop")
-
-write_csv(value_monthly, "value_monthly.csv")
-
+```{r message = FALSE, warning = FALSE}
+# import data for monthly cotton T-shirt imports for all countries between 2020 and 2025
+all_countries <- read_csv("../data/all_countries_cotton.csv")%>%clean_names()
 ```
 
 
