@@ -137,3 +137,8 @@ quantity_x2020_x2025 <- all_countries%>%
 datatable(quantity_x2020_x2025, options = list(pageLength = 10)) 
 ```
 
+### Questions
+1. How have tariff rates changed over time for top importers of cotton T-shirts? 
+2. How has the general rate of imports changed over time for all countries? (Big jump in the beginning of 2025 as people rushed to buy products before tariffs hit) 
+3. How do cotton T-shirt imports compare with other apparel items, like polyester shirts? 
+4. What's an example of how a tariff on an example brand item would affect a consumer? How much would it raise prices? 
