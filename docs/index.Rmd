@@ -48,8 +48,10 @@ library(janitor)
 all_countries <- read_csv("../data/all_countries_cotton.csv")%>%clean_names()
 ```
 
+### I: T-shirts as a promotional product 
 
-### T-shirts as a promotional product data 
+<b>What percentage of promotional product sales were from T-shirts in 2024?</b><br>
+In this chunk, I used Google's Gemini API fed it a screenshot from an ASI report with a pie chart and bar chart showing findings from their research about promotional products. It identified the top promotional products and created a CSV based on the data. I commented out this part because running it uses up all my API tokens. 
 
 ```{r}
 # get data based on ASI's past reports 
@@ -60,4 +62,14 @@ all_countries <- read_csv("../data/all_countries_cotton.csv")%>%clean_names()
 #asi_csv <- gemini_chat$chat("Create a CSV where one row is one product in the pie chart, and columns are the values corresponding to each product", asi_report)
 ```
 
+T-shirts have been the most popular promotional product category for years. More than 17% of all promotional product sales in 2024 were in the T-shirt category, according to ASI's research, amounting to over $4.5 billion in sales. 
 
+<iframe src='https://flo.uri.sh/visualisation/23598698/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23598698/?utm_source=embed&utm_campaign=visualisation/23598698' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
+Promotional T-shirts <a href= "https://printify.com/blog/t-shirt-fabric-guide/" target="_blank"> tend </a>to be made of cotton, followed by polyester. 
+
+Here's where cotton T-shirts come from. 
+
+## II: Top Cotton T-shirt Exporters to the US
+
+<iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
