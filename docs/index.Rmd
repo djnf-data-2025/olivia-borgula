@@ -41,6 +41,7 @@ library(httr)
 library(jsonlite)
 library(rvest)
 library(janitor)
+library(DT)
 ```
 
 ```{r message = FALSE, warning = FALSE}
@@ -74,35 +75,43 @@ Here's where cotton T-shirts come from.
 
 <iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
-<b>What are the top countries exporting cotton T-shirts to the US? </b><br>
-tktkttkt
-
+<b>Currently, what are the top countries exporting cotton T-shirts to the US? </b><br>
+In March 2025, the most recent data available, the top countries exporting cotton T-shirts to the US in terms of total quantity were Bangladesh, India and Vietnam. 
 ```{r message = FALSE, warning = FALSE}
-value_x2020_x2025 <- all_countries%>%
+# find the top 10 countries exporting cotton T-shirts to the US in March 2025 - the most current data 
+
+value_march_x2025 <- all_countries %>%
+  filter(year == 2025, month == 3) %>%
+  group_by(country) %>%
+  summarize(
+    total_quantity = sum(quantity, na.rm = TRUE),
+    total_value = sum(value, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(total_quantity)) %>%
+  slice_head(n = 10)
+
+datatable(value_march_x2025, options = list(pageLength = 10)) 
+
+```
+
+<b>What are the top exporters of cotton T-shirts to the US between 2020 and 2025?</b><br>
+Explore the datatable and sort each year column to see top countries by total quantity shipped to the US for that year. 2025 data is not complete because it's only available until March 2025. 
+
+Based on this, 
+```{r message = FALSE, warning = FALSE}
+# find the top 10 countries exporting cotton T-shirts to the US for each year between 2020 and 2025
+
+quantity_x2020_x2025 <- all_countries%>%
   group_by(country, year)%>%
-  summarize(yearly_total = sum(value, na.rm=TRUE))%>%
+  summarize(yearly_total = sum(quantity, na.rm=TRUE))%>%
   pivot_wider(
     names_from = year,
     values_from = yearly_total,
     names_prefix = "year_"
-  )
+  )%>%
+  select(country, year_2020, year_2021, year_2022, year_2023, year_2024, year_2025)
 
-value_long <- value_x2020_x2025 %>%
-  pivot_longer(
-    cols = starts_with("year_"),
-    names_to = "year",
-    names_prefix = "year_",
-    values_to = "value"
-  ) %>%
-  mutate(year = as.integer(year))
-
-value_monthly <- all_countries %>%
-  mutate(
-    year = as.integer(year),
-    month = as.integer(month),
-    year_month = as.Date(sprintf("%04d-%02d-01", year, month))  # e.g., "2025-01-01"
-  ) %>%
-  group_by(country, year_month) %>%
-  summarize(monthly_total = sum(value, na.rm = TRUE), .groups = "drop")
+datatable(quantity_x2020_x2025, options = list(pageLength = 10)) 
 ```
 
