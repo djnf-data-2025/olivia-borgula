@@ -19,6 +19,8 @@ This map represents the 10 countries that imported the most cotton T-shirts to t
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
 
+<iframe src='https://flo.uri.sh/story/3153791/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3153791/?utm_source=embed&utm_campaign=story/3153791' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
 ### Original pitch
 It was originally suggested that I look into Trump's recent cuts on top promotional product industries, including education, healthcare, manufacturing and others. I chose to pitch this idea instead because a key factor in those industries, GDP data, is not available for 2025 until June 26. I also struggled to narrow down that topic and was unsure about whether I could produce meaningful analysis in a week given how many story possibilities there are within that topic. 
 
@@ -64,6 +66,7 @@ library(DT)
 all_countries <- read_csv("../data/all_countries_cotton.csv")%>%clean_names()
 ```
 
+
 ### I: T-shirts as a promotional product 
 
 <b>What percentage of promotional product sales were from T-shirts in 2024?</b><br>
@@ -88,7 +91,7 @@ Here's where cotton T-shirts come from.
 
 ## II: Top Cotton T-shirt Exporters to the US
 
-<b>How do some of the top exporters compare over time? </b><br>
+<b>How do some of the top exporters compare over time? </b> <br>
 This figure shows the top six exporters in terms of aggregated cotton T-shirt importers to the US between January 2024 and March 2025, which is why it looks different than just looking at March 2025 data. 
 
 It shows that China's imports have trended down in 2025, Bangladesh's have steadily risen and Honduras and Nicaragua have spiked in 2025. 
