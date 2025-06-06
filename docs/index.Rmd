@@ -59,6 +59,9 @@ library(jsonlite)
 library(rvest)
 library(janitor)
 library(DT)
+
+# turn off scientific notation
+options(scipen = 999)  
 ```
 
 ```{r message = FALSE, warning = FALSE}
@@ -92,6 +95,7 @@ Here's where cotton T-shirts come from.
 ## II: Top Cotton T-shirt Exporters to the US
 
 <b>Which countries exported the most cotton T-shirts to the U.S. in 2024?</b>
+In 2024, Bangladesh, India and Vietnam accounted for more than 60% of the total cotton T-shirt imports to the U.S. Bangladesh made up close to 40% out of the 112 countries that export this specific product to the U.S.  
 ```{r}
 #find quantity & value of exports to US for all countries with at least one export in 2024
 quantity_x2024 <- all_countries %>%
@@ -102,6 +106,9 @@ quantity_x2024 <- all_countries %>%
     total_value = sum(value, na.rm = TRUE),
     .groups = "drop"
   ) %>%
+  mutate(
+    percent_of_total_quantity = total_quantity / sum(total_quantity) * 100
+  ) %>% # find how much each country contributes to the total exports as a percent of the total exports to the US 
   arrange(desc(total_quantity))
 
 datatable(quantity_x2024, options = list(pageLength = 10)) 
