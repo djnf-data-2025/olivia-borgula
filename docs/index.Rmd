@@ -22,6 +22,19 @@ This map represents the 10 countries that imported the most cotton T-shirts to t
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
 
+  <style>
+    .flourish-container {
+      display: flex;
+      gap: 20px; /* space between the two charts */
+      justify-content: center;
+      flex-wrap: wrap; /* wraps on small screens */
+    }
+    .flourish-chart-wrapper {
+      flex: 1 1 45%; /* responsive width */
+      min-width: 300px;
+    }
+  </style>
+
 <div class="flourish-container">
   <div class="flourish-chart-wrapper">
       <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
