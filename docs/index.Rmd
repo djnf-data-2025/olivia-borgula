@@ -6,7 +6,7 @@ output:
 date: "June 7, 2025"
 
 ---
-## How recent tarrifs affect a top promotional product: T-shirts
+## <span style="color: navy;">Diving into data about tariff effects on a top promotional product: T-shirts</span>
 
 Olivia Borgula
 oborgula@terpmail.umd.edu | 616-970-3620
