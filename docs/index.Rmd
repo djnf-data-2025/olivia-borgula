@@ -22,30 +22,39 @@ This map represents the 10 countries that imported the most cotton T-shirts to t
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
 
-  <style>
-    .flourish-container {
-      display: flex;
-      gap: 20px; /* space between the two charts */
-      justify-content: center;
-      flex-wrap: wrap; /* wraps on small screens */
-    }
-    .flourish-chart-wrapper {
-      flex: 1 1 45%; /* responsive width */
-      min-width: 300px;
-    }
-  </style>
+<style>
+.flourish-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flourish-chart-wrapper {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+</style>
 
 <div class="flourish-container">
   <div class="flourish-chart-wrapper">
-      <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    <div class="flourish-embed" data-src="story/3154895">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" />
+      </noscript>
     </div>
   </div>
+
   <div class="flourish-chart-wrapper">
-<iframe title="" aria-label="Map" id="datawrapper-chart-ozdkb" src="https://datawrapper.dwcdn.net/ozdkb/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="536" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
-</script>
+    <div class="flourish-embed" data-src="story/ANOTHER_STORY_ID_HERE">
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/story/ANOTHER_STORY_ID_HERE/thumbnail" width="100%" alt="visualization" />
+      </noscript>
     </div>
   </div>
 </div>
+
 
 ### I: Tariffs 
 
