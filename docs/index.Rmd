@@ -37,20 +37,12 @@ This is the most recent data from the International Trade Administration, but ho
 
 <div class="flourish-container">
   <div class="flourish-chart-wrapper">
-    <div class="flourish-embed" data-src="story/3154895">
-      <script src="https://public.flourish.studio/resources/embed.js"></script>
-      <noscript>
-        <img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" />
-      </noscript>
+    <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
     </div>
   </div>
 
   <div class="flourish-chart-wrapper">
-    <div class="flourish-embed" data-src="story/ANOTHER_STORY_ID_HERE">
-      <script src="https://public.flourish.studio/resources/embed.js"></script>
-      <noscript>
-        <img src="https://public.flourish.studio/story/ANOTHER_STORY_ID_HERE/thumbnail" width="100%" alt="visualization" />
-      </noscript>
+      <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
     </div>
   </div>
 </div>
