@@ -25,6 +25,8 @@ ASI has covered tariffs extensively, but the bulk of coverage is breaking news s
 
 For this analysis, I used category 340 items with the descriptor "M&B COTTON SHIRTS, NOT KNIT" as specified with <a href="https://www.trade.gov/data-visualization/us-textile-and-apparel-imports-country" target="_blank">data</a> from the International Trade Association. This does not include other cotton aparrel or mixed fabric blend T-shirts that includle cotton. I decided on this item based on research indicating that cotton T-shirts <a href="https://chuxprint.com/blogs/chux-blog/understanding-t-shirt-fabric-options-which-material-is-right-for-you" target="_blank">tend<a/> to be a popular promo item compared to other fabrics. 
 
+<b>Estimated delivery:</b> mid to late June. 
+
 ### What the current data shows 
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
@@ -52,19 +54,13 @@ In April, Trump announced a baseline 10% tariff on all imported goods. Top cotto
 
 <div class="flourish-embed flourish-table" data-src="visualisation/23636371"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23636371/thumbnail" width="100%" alt="table visualization" /></noscript></div>
 
-<b>Data, visuals and graphics:</b> I will analyze data from the International Trade Association — which tracks U.S. textile and apparel imports by country — to determine top countries that import materials of interest based on what I’ve researched about promotional T-shirts: cotton T-shirts and polyester filament fabrics. I’m interested in data quantifying the number of shirts imported from other countries, rather than imports on the raw materials, because promotional T-shirts tend to be shipped from other countries rather than made domestically. 
+T-shirts have been the most popular promotional product category for years. More than 17% of all promotional product sales in 2024 were in the T-shirt category, according to ASI's research, amounting to over $4.5 billion in sales. 
 
-I’ll also find how much money the U.S. spent on these imports from the top countries and how much cotton and polyester T-shirt imports have changed over time by using another data tool from the International Trade Association. 
+<iframe src='https://flo.uri.sh/visualisation/23598698/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:500px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23598698/?utm_source=embed&utm_campaign=visualisation/23598698' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
-For data on T-shirts as a promotional product, I’ll use ASI’s market research to explore what the total promotional T-shirt sales were in 2024 — the most recent data — and whether that’s changed over the last five to 10 years by examining past state of the industries. 
+Promotional T-shirts <a href= "https://printify.com/blog/t-shirt-fabric-guide/" target="_blank"> tend </a>to be made of cotton, followed by polyester. 
 
-For visuals, I plan on creating a map in Flourish showing the flow of cotton T-shirt imports from top countries outside the U.S. with the weight of the line representing the total monetary value of the transaction. I also want to create additional Flourish graphics like bar charts, line charts and potentially an alluvial diagram to compare imports across countries and over time. I prefer Flourish over ggplot or Datawrapper because it’s the site I’m most familiar with and I want interactive graphics on the final markdown presentation. 
-
-<b>Other information I’ll need:</b> I want to do additional data analysis for secondary imported materials in promotional T-shirts, like polyester shirts and textiles, and will do additional research on how tariffs will affect the cost of these goods. 
-
-<b>Estimated delivery:</b> mid to late June. 
-
-### Upload data and load libraries  
+### Data analysis 
 ```{r message = FALSE, warning = FALSE}
 #load in libraries 
 library(tidyverse)
@@ -85,12 +81,6 @@ options(scipen = 999)
 all_countries <- read_csv("../data/all_countries_cotton.csv")%>%clean_names()
 ```
 
-
-### I: T-shirts as a promotional product 
-
-<b>What percentage of promotional product sales were from T-shirts in 2024?</b><br>
-In this chunk, I used Google's Gemini API fed it a screenshot from an ASI report with a pie chart and bar chart showing findings from their research about promotional products. It identified the top promotional products and created a CSV based on the data. I commented out this part because running it uses up all my API tokens. 
-
 ```{r}
 # get data based on ASI's past reports 
 #gemini_chat <- chat_google_gemini(model="gemini-2.5-flash-preview-04-17")
@@ -100,18 +90,6 @@ In this chunk, I used Google's Gemini API fed it a screenshot from an ASI report
 #asi_csv <- gemini_chat$chat("Create a CSV where one row is one product in the pie chart, and columns are the values corresponding to each product", asi_report)
 ```
 
-T-shirts have been the most popular promotional product category for years. More than 17% of all promotional product sales in 2024 were in the T-shirt category, according to ASI's research, amounting to over $4.5 billion in sales. 
-
-<iframe src='https://flo.uri.sh/visualisation/23598698/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23598698/?utm_source=embed&utm_campaign=visualisation/23598698' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-
-Promotional T-shirts <a href= "https://printify.com/blog/t-shirt-fabric-guide/" target="_blank"> tend </a>to be made of cotton, followed by polyester. 
-
-Here's where cotton T-shirts come from. 
-
-## II: Top Cotton T-shirt Exporters to the US
-
-<b>Which countries exported the most cotton T-shirts to the U.S. in 2024?</b>
-In 2024, Bangladesh, India and Vietnam accounted for more than 60% of the total cotton T-shirt imports to the U.S. Bangladesh made up close to 40% out of the 112 countries that export this specific product to the U.S.  
 ```{r}
 #find quantity & value of exports to US for all countries with at least one export in 2024
 quantity_x2024 <- all_countries %>%
@@ -126,17 +104,8 @@ quantity_x2024 <- all_countries %>%
     percent_of_total_quantity = total_quantity / sum(total_quantity) * 100
   ) %>% # find how much each country contributes to the total exports as a percent of the total exports to the US 
   arrange(desc(total_quantity))
-
-datatable(quantity_x2024, options = list(pageLength = 10)) 
 ```
 
-
-<b>How do some of the top exporters compare over time? </b> <br>
-This figure shows the top six exporters in terms of aggregated cotton T-shirt importers to the US between January 2024 and March 2025, which is why it looks different than just looking at March 2025 data. 
-
-
-<b>Currently, what are the top countries exporting cotton T-shirts to the US? </b> <br>
-In March 2025, the most recent data available, the top countries exporting cotton T-shirts to the US in terms of total quantity were Bangladesh, India and Vietnam. 
 ```{r message = FALSE, warning = FALSE}
 # find the top 10 countries exporting cotton T-shirts to the US in March 2025 - the most current data 
 
@@ -154,12 +123,6 @@ quantity_march_x2025 <- all_countries %>%
 datatable(quantity_march_x2025, options = list(pageLength = 10)) 
 
 ```
-
-<b>What are the top exporters of cotton T-shirts to the US between 2020 and 2025?</b>
-<br>
-Explore the datatable and sort each year column to see top countries by total quantity shipped to the US for that year. 2025 data is not complete because it's only available until March 2025. 
-
-Based on this, Bangladesh, India, Vietnam and China have consistently been the top five exporters to the US, which some variation each year. 
 
 ```{r message = FALSE, warning = FALSE}
 # find the top 10 countries exporting cotton T-shirts to the US for each year between 2020 and 2025
@@ -188,7 +151,3 @@ But when the data is available, I plan to use it and assess how each industry ha
 3. How do cotton T-shirt imports compare with other apparel items, like polyester shirts? 
 4. What's an example of how a tariff on an example brand item would affect a consumer? How much would it raise prices? 
 
-
-While tariffs have wide-reaching effects on the promotional product industry, this story may encourage manufacturers to be more creative outside of T-shirts for their promotional products or seek domestic sellers. 
-
-<b>Audience:</b> This story’s audience would be stakeholders in the promotional products industry, especially those who sell T-shirts or are interested in staying up-to-date about tariff developments. I can interview industry experts, T-shirt manufacturers and economic experts with expertise on how tariffs work.
