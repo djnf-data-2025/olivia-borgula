@@ -25,13 +25,15 @@ ASI has covered tariffs extensively, but the bulk of coverage is breaking news s
 
 For this analysis, I used category 340 items with the descriptor "M&B COTTON SHIRTS, NOT KNIT" as specified with <a href="https://www.trade.gov/data-visualization/us-textile-and-apparel-imports-country" target="_blank">data</a> from the International Trade Association. This does not include other cotton aparrel or mixed fabric blend T-shirts that includle cotton. I decided on this item based on research indicating that cotton T-shirts <a href="https://chuxprint.com/blogs/chux-blog/understanding-t-shirt-fabric-options-which-material-is-right-for-you" target="_blank">tend<a/> to be a popular promo item compared to other fabrics. 
 
+### What the current data shows 
+
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
 
 <div class="flourish-embed flourish-map" data-src="visualisation/23601140"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23601140/thumbnail" width="100%" alt="map visualization" /></noscript></div>
 
-<b>Bangladesh, India and Vietnam made up more than 60% of total cotton T-shirt exports in 2024.</b> China and Indonesia followed, at about 9% and 6%, respectively. 
+### Examining 2024 data 
 
-### 2024 data
+<b>Bangladesh, India and Vietnam made up more than 60% of total cotton T-shirt exports in 2024.</b> China and Indonesia followed, at about 9% and 6%, respectively. 
 
 <iframe src='https://flo.uri.sh/story/3154895/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3154895/?utm_source=embed&utm_campaign=story/3154895' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
@@ -50,12 +52,12 @@ This is the most recent data from the International Trade Administration, but ho
 
 <div class="flourish-container">
   <div class="flourish-chart-wrapper">
-    <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    <iframe src='https://flo.uri.sh/story/3154895/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3154895/?utm_source=embed&utm_campaign=story/3154895' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
     </div>
   </div>
 
   <div class="flourish-chart-wrapper">
-      <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
+      <iframe src='https://flo.uri.sh/story/3154895/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3154895/?utm_source=embed&utm_campaign=story/3154895' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
     </div>
   </div>
 </div>
