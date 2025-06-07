@@ -99,7 +99,7 @@ Some additional elements I want to include would be walking the reader through a
 ### Additional questions
 1. How do cotton T-shirt imports compare with other apparel items, like polyester shirts? 
 2. What's an example of how a tariff on an example brand item would affect a consumer? How much would it raise prices? 
-3. Which countries have seen a rise in exports of the material to the U.S. in the first months of 2024
+3. How do cotton T-shirt imports compare to other aparrel items? 
 
 ### Data analysis 
 ```{r message = FALSE, warning = FALSE}
