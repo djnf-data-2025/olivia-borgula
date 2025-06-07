@@ -40,11 +40,16 @@ This is the most recent data from the International Trade Administration, but ho
 
 ### I: Tariffs 
 
-<iframe src='https://flo.uri.sh/story/3153791/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:70%;height:900px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:70%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3153791/?utm_source=embed&utm_campaign=story/3153791' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+<b>Several of the top cotton T-shirt importers have had notable shifts since Trump took office.<b> China's imports have trended down in 2025, Bangladesh's have steadily risen and Honduras and Nicaragua have spiked in 2025. 
+
+<iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
+
+
+<iframe src='https://flo.uri.sh/story/3153791/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:80%;height:900px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:70%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3153791/?utm_source=embed&utm_campaign=story/3153791' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
 In April, Trump announced a baseline 10% tariff on all imported goods. Top cotton T-shirt exporters were also hit with additional rates in an effort to minimize the U.S.'s trade deficit. Vietnam faces a 46% tariff, Bangladesh is subject to 37% and China has a 34% tariff on top of previously announced duties, raising its tariff rate to 54%. 
 
-
+<div class="flourish-embed flourish-table" data-src="visualisation/23636371"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23636371/thumbnail" width="100%" alt="table visualization" /></noscript></div>
 
 <b>Data, visuals and graphics:</b> I will analyze data from the International Trade Association — which tracks U.S. textile and apparel imports by country — to determine top countries that import materials of interest based on what I’ve researched about promotional T-shirts: cotton T-shirts and polyester filament fabrics. I’m interested in data quantifying the number of shirts imported from other countries, rather than imports on the raw materials, because promotional T-shirts tend to be shipped from other countries rather than made domestically. 
 
@@ -128,9 +133,6 @@ datatable(quantity_x2024, options = list(pageLength = 10))
 <b>How do some of the top exporters compare over time? </b> <br>
 This figure shows the top six exporters in terms of aggregated cotton T-shirt importers to the US between January 2024 and March 2025, which is why it looks different than just looking at March 2025 data. 
 
-It shows that China's imports have trended down in 2025, Bangladesh's have steadily risen and Honduras and Nicaragua have spiked in 2025. 
-
-<iframe src='https://flo.uri.sh/visualisation/23591396/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/visualisation/23591396/?utm_source=embed&utm_campaign=visualisation/23591396' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
 <b>Currently, what are the top countries exporting cotton T-shirts to the US? </b> <br>
 In March 2025, the most recent data available, the top countries exporting cotton T-shirts to the US in terms of total quantity were Bangladesh, India and Vietnam. 
