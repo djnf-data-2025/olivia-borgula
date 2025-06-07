@@ -5,14 +5,17 @@ output:
     theme: readable
 
 ---
-## Diving into data about tariff effects on a top promotional product: T-shirts
+### Diving into data about tariff effects on a top promotional product: T-shirts
 <br>
 
 #### June 7, 2025
 Olivia Borgula
 oborgula@terpmail.umd.edu | 616-970-3620
 
-<img src="trump-graphic.png">
+<p align="center">
+  <img src="trump-graphic.png" alt="Trump Graphic">
+</p>
+<br>
 
 T-shirts are consistently a top promotional product. U.S. President Donald Trump has levied heavy tariffs since taking office in January on top exporters of cotton T-shirts to the U.S. including China, Vietnam and India, resulting in steeper prices and a blow to industry.  
 
