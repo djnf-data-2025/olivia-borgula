@@ -11,20 +11,32 @@ date: "June 7, 2025"
 Olivia Borgula
 oborgula@terpmail.umd.edu | 616-970-3620
 
+### Most recent data: March 2025 
+This map represents the 10 countries that imported the most cotton T-shirts to the US in March 2025. 
+
 <div class="flourish-embed flourish-map" data-src="visualisation/23601140"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23601140/thumbnail" width="100%" alt="map visualization" /></noscript></div>
 
-Note: I can't tell if this map is just taking a long time to load or if it's just note embedding correcctly. It it doesn't work, click <a href= "https://public.flourish.studio/visualisation/23601140/?utm_source=embed&utm_campaign=visualisation/23601140"> here</a> to view visualization. It only works for me on Safari. 
+### 2024 data
 
-This map represents the 10 countries that imported the most cotton T-shirts to the US in March 2025. 
+<iframe src='https://flo.uri.sh/story/3154895/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:100%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3154895/?utm_source=embed&utm_campaign=story/3154895' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
 
 This is the most recent data from the International Trade Administration, but how does it compare to past years? How has it shifted since Trump took office amid heavy tariffs imposed on apparel?
 
+<div class="flourish-container">
+  <div class="flourish-chart-wrapper">
+      <div class="flourish-embed" data-src="story/3154895"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/story/3154895/thumbnail" width="100%" alt="visualization" /></noscript></div>
+    </div>
+  </div>
+  <div class="flourish-chart-wrapper">
+<iframe title="" aria-label="Map" id="datawrapper-chart-ozdkb" src="https://datawrapper.dwcdn.net/ozdkb/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="536" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}}))}();
+</script>
+    </div>
+  </div>
+</div>
+
+### I: Tariffs 
+
 <iframe src='https://flo.uri.sh/story/3153791/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:900px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe><div style='width:70%!;margin-top:4px!important;text-align:right!important;'><a class='flourish-credit' href='https://public.flourish.studio/story/3153791/?utm_source=embed&utm_campaign=story/3153791' target='_top' style='text-decoration:none!important'><img alt='Made with Flourish' src='https://public.flourish.studio/resources/made_with_flourish.svg' style='width:105px!important;height:16px!important;border:none!important;margin:0!important;'> </a></div>
-
-### Original pitch
-It was originally suggested that I look into Trump's recent cuts on top promotional product industries, including education, healthcare, manufacturing and others. I chose to pitch this idea instead because a key factor in those industries, GDP data, is not available for 2025 until June 26. I also struggled to narrow down that topic and was unsure about whether I could produce meaningful analysis in a week given how many story possibilities there are within that topic. 
-
-But when the data is available, I plan to use it and assess how each industry has performed in 2025 and compare it to the past five to 10 years. I also want to quantity Trump's cuts from the beginning of the year, do some explanatory analysis, and also consider how factors like further cuts in the proposed budget will affect the promotional products industry. 
 
 ### My pitch 
 
@@ -163,6 +175,11 @@ quantity_x2020_x2025 <- all_countries%>%
 
 datatable(quantity_x2020_x2025, options = list(pageLength = 10)) 
 ```
+
+### Original pitch
+It was originally suggested that I look into Trump's recent cuts on top promotional product industries, including education, healthcare, manufacturing and others. I chose to pitch this idea instead because a key factor in those industries, GDP data, is not available for 2025 until June 26. I also struggled to narrow down that topic and was unsure about whether I could produce meaningful analysis in a week given how many story possibilities there are within that topic. 
+
+But when the data is available, I plan to use it and assess how each industry has performed in 2025 and compare it to the past five to 10 years. I also want to quantity Trump's cuts from the beginning of the year, do some explanatory analysis, and also consider how factors like further cuts in the proposed budget will affect the promotional products industry. 
 
 ### Questions
 1. How have tariff rates changed over time for top importers of cotton T-shirts? 
