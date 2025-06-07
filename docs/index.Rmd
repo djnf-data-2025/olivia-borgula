@@ -3,11 +3,12 @@ title: The Trump administration's trade war and the promotional products industr
 output: 
   html_document:
     theme: readable
-date: "June 7, 2025"
 
 ---
 ## <span style="color: navy;">Diving into data about tariff effects on a top promotional product: T-shirts</span>
+<br>
 
+#### June 7, 2025
 Olivia Borgula
 oborgula@terpmail.umd.edu | 616-970-3620
 
