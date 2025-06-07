@@ -49,6 +49,20 @@ This is the most recent data from the International Trade Administration, but ho
 
 <div class="flourish-embed flourish-map" data-src="visualisation/23601140"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/23601140/thumbnail" width="100%" alt="map visualization" /></noscript></div>
 
+Top 10 countries: 
+1. Bangladesh
+2. India
+3. Vietnam
+4. Indonesia
+5. China
+6. Sri Lanka
+7. Cambodia
+8. Honduras
+9. Madagascar
+10. Mexico
+
+This has mostly stayed consistent between 2020 and 2024, but some countries — like Honduras and China — have shifted down.  
+
 ### Examining 2024 data 
 
 <b>Bangladesh, India and Vietnam made up more than 60% of total cotton T-shirt exports in 2024.</b> China and Indonesia followed, at about 9% and 6%, respectively. 
