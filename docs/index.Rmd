@@ -99,7 +99,7 @@ Some additional elements I want to include would be walking the reader through a
 ### Additional questions
 1. How do cotton T-shirt imports compare with other apparel items, like polyester shirts? 
 2. What's an example of how a tariff on an example brand item would affect a consumer? How much would it raise prices? 
-3. How do cotton T-shirt imports compare to other aparrel items? 
+3. How do cotton T-shirt imports compare to other apparel items? 
 
 ### Data analysis 
 ```{r message = FALSE, warning = FALSE}
